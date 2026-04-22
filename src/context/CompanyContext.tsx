@@ -1,6 +1,9 @@
 import axios from "axios";
+import {companyData} from "../data/companies";
 import { createContext, useContext, useState, useEffect } from "react";
 
+const useApi = import.meta.env.VITE_USE_API === "true";
+const apiUrl = import.meta.env.VITE_API_URL;
 interface Company {
   id: number;
   name: string;
@@ -31,8 +34,7 @@ const CompanyContext = createContext<CompanyContextType | null>(null);
 
 
 export const CompanyProvider = ({ children }: any) => {
-   
-  const [companies, setCompanies] = useState([]);
+  const [companies, setCompanies]:any = useState([]);
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("");
   const [industry, setIndustry] = useState("");
@@ -43,22 +45,46 @@ export const CompanyProvider = ({ children }: any) => {
   const itemsPerPage = 5;
 
   // API call
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const res = await axios.get("http://localhost:3001/companies");
+  //       setCompanies(res.data);
+  //     } catch (err) {
+  //       setError("Failed to fetch companies");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const res = await axios.get("http://localhost:3001/companies");
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+
+      if (useApi) {
+        const res = await axios.get(apiUrl);
         setCompanies(res.data);
-      } catch (err) {
-        setError("Failed to fetch companies");
-      } finally {
-        setLoading(false);
+      } else {
+        // fallback to static JSON
+        setCompanies(companyData);
       }
-    };
 
-    fetchData();
-  }, []);
+    } catch (err) {
+      // fallback if API fails
+      setCompanies(companyData);
+      setError("API failed, showing local data");
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  fetchData();
+}, []);
   // Filter logic
   const filteredCompanies = companies.filter((c:any) => {
     return (

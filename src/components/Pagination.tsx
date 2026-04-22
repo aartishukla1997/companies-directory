@@ -33,7 +33,7 @@ if (filteredCompanies.length === 0) return null;
 
       {/* Next */}
       <button
-        onClick={() => setCurrentPage((p: number) => p + 1)}
+        onClick={() => setCurrentPage((p) => p + 1)}
         disabled={currentPage === totalPages}
         className={`px-3 py-1 border rounded-lg ${
           currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""
