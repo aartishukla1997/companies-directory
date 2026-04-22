@@ -18,7 +18,8 @@ interface CompanyContextType {
   setIndustry: (v: string) => void;
   loading: boolean;
   error: string;
-  setCurrentPage: (v: number) => void;
+  // setCurrentPage: (v: number) => void;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
   currentPage: number;
   totalPages: number;
   paginatedCompanies: Company[];
@@ -67,7 +68,7 @@ export const CompanyProvider = ({ children }: any) => {
     );
   });
 //  sort logic 
-  const sortedCompanies = [...filteredCompanies].sort((a, b) => {
+  const sortedCompanies :any = [...filteredCompanies].sort((a:any, b:any) => {
   if (sortOrder === "asc") {
     return a.name.localeCompare(b.name);
   } else {

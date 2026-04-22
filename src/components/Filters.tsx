@@ -14,8 +14,8 @@ const Filters = () => {
   } = useCompany();
 
   console.log(cities, industries, "industries");
-  const [cityLimit, setCityLimit] = useState(10);
-  const [industryLimit, setIndustryLimit] = useState(10);
+  const [cityLimit, _setCityLimit] = useState(10);
+  const [industryLimit, _setIndustryLimit] = useState(10);
 
   const handleReset = () => {
     setSearch("");
