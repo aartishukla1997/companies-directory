@@ -1,0 +1,24 @@
+{
+  "companies": [
+    { "id": 1, "name": "TCS", "location": "Mumbai", "industry": "IT" },
+    { "id": 2, "name": "Infosys", "location": "Bangalore", "industry": "IT" },
+    { "id": 3, "name": "Wipro", "location": "Hyderabad", "industry": "IT" },
+    { "id": 4, "name": "HCL", "location": "Noida", "industry": "IT" },
+    { "id": 5, "name": "Tech Mahindra", "location": "Pune", "industry": "IT" },
+    { "id": 6, "name": "Reliance", "location": "Mumbai", "industry": "Energy" },
+    { "id": 7, "name": "ONGC", "location": "Delhi", "industry": "Energy" },
+    { "id": 8, "name": "HDFC Bank", "location": "Mumbai", "industry": "Finance" },
+    { "id": 9, "name": "ICICI Bank", "location": "Mumbai", "industry": "Finance" },
+    { "id": 10, "name": "Axis Bank", "location": "Mumbai", "industry": "Finance" },
+    { "id": 11, "name": "Flipkart", "location": "Bangalore", "industry": "E-commerce" },
+    { "id": 12, "name": "Amazon India", "location": "Bangalore", "industry": "E-commerce" },
+    { "id": 13, "name": "Zomato", "location": "Gurgaon", "industry": "Food Tech" },
+    { "id": 14, "name": "Swiggy", "location": "Bangalore", "industry": "Food Tech" },
+    { "id": 15, "name": "Paytm", "location": "Noida", "industry": "Fintech" },
+    { "id": 16, "name": "PhonePe", "location": "Bangalore", "industry": "Fintech" },
+    { "id": 17, "name": "Byju’s", "location": "Bangalore", "industry": "EdTech" },
+    { "id": 18, "name": "Unacademy", "location": "Bangalore", "industry": "EdTech" },
+    { "id": 19, "name": "Nykaa", "location": "Mumbai", "industry": "E-commerce" },
+    { "id": 20, "name": "Tata Motors", "location": "Pune", "industry": "Automobile" }
+  ]
+}
